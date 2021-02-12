@@ -35,6 +35,12 @@ DB_PASSWORD=<YOUR_DB_PASSWORD>
 API End points and documentation can be found at:
 [Postman Documentation](https://documenter.getpostman.com/view/5928045/TWDRsfX6)
 
+List of all API endpoints:
+
+>POST /api/send
+
+>GET /api/list
+
 ### Installation
 Install the dependencies and start the server
 
