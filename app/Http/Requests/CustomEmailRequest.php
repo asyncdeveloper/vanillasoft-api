@@ -31,8 +31,8 @@ class CustomEmailRequest extends FormRequest
             'data.*.body' => 'required|string',
             'data.*.subject' => 'required|string',
             'data.*.attachments' => 'nullable|array',
-            'data.*.attachments.*.name' => 'string|min:1|max:191',
-            'data.*.attachments.*.content' => 'string',
+            'data.*.attachments.*.name' => 'required|string|min:3|max:191',
+            'data.*.attachments.*.content' => 'required|string',
         ];
     }
 
