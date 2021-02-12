@@ -112,12 +112,28 @@ class CustomEmailTest extends TestCase
 
     /** @test */
     public function authorisedUserCanViewAllEmailsSent() {
-        CustomEmail::factory(5)->create();
+        $data = CustomEmail::factory(2)->create();
 
         $this->getJson('/api/list', $this->headers)
             ->assertOk()
             ->assertJsonStructure([ 'message', 'data' ])
-            ->assertJsonCount(5, 'data.data');
+            ->assertJsonCount(2, 'data.data')
+            ->assertJson([
+                'data' => [
+                    'data' => [
+                        [
+                            'email' => $data->first()->email,
+                            'body' => $data->first()->body,
+                            'subject' => $data->first()->subject,
+                        ],
+                        [
+                            'email' => $data->last()->email,
+                            'body' => $data->last()->body,
+                            'subject' => $data->last()->subject,
+                        ]
+                    ]
+                ]
+            ]);
 
     }
 
