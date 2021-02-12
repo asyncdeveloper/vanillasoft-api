@@ -41,6 +41,10 @@ List of all API endpoints:
 
 >GET /api/list
 
+### Making Requests
+Enable Bearer Token on API calls. use the value in `API_KEY` in for token.
+Kindly check API documentation for sample
+
 ### Installation
 Install the dependencies and start the server
 
